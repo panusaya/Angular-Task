@@ -1,0 +1,59 @@
+{
+    "data":[
+        {
+            "customerName":"Ashoka",
+            "dob":"20/10/2005",
+            "customerAddress":"Near IT Park",
+            "photo":"https://static.toiimg.com/photo/101517951.cms",
+            "customerId":"1",
+            "cityId":2,
+            "state": "Maharashtra",
+            "stateId":1,
+            "city": "Nagpur"
+        },
+        {
+            "customerName":"Mahesh",
+            "dob":"12/12/2010",
+            "customerAddress":"Near Shivaji Park",
+            "photo":"",
+            "customerId":"2",
+            "cityId":3,
+            "stateId":1,
+            "state": "Maharashtra",
+            "city": "Pune"
+        },
+        {
+            "customerName":"Devendra",
+            "dob":"25/06/2008",
+            "customerAddress":"Near IT Park",
+            "photo":"",
+            "customerId":"3",
+            "cityId":1,
+            "stateId":1,
+            "state": "Maharashtra",
+            "city": "Mumbai"
+        },
+        {
+            "customerName":"Mahendra",
+            "dob":"01/04/2003",
+            "customerAddress":"Near IT Park",
+            "photo":"",
+            "customerId":"4",
+            "cityId":5,
+            "stateId":5,
+            "state": "Delhi",
+            "city": "Noida"
+        },
+        {
+            "customerName":"Virendra",
+            "dob":"28/11/2004",
+            "customerAddress":"Near IT Park",
+            "photo":"",
+            "customerId":"5",
+            "cityId":4,
+            "stateId":1,
+            "state": "Maharashtra",
+            "city": "Kolhapur"
+        }
+    ]
+}

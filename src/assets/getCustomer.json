@@ -1,0 +1,59 @@
+{
+    "data":[
+        {
+            "customerName":"Ashoka",
+            "dob":"20/10/2005",
+            "customerAddress":"Near IT Park",
+            "photo":"https://static.toiimg.com/photo/101517951.cms",
+            "customerId":"1",
+            "cityId":2,
+            "state": "Maharashtra",
+            "stateId":1,
+            "city": "Nagpur"
+        },
+        {
+            "customerName":"Mahesh",
+            "dob":"12/12/2010",
+            "customerAddress":"Near Shivaji Park",
+            "photo":"https://images.hindustantimes.com/img/2022/04/24/1600x900/tendulkar_mi_ipl_1650777563845_1650777571761.webp",
+            "customerId":"2",
+            "cityId":3,
+            "stateId":1,
+            "state": "Maharashtra",
+            "city": "Pune"
+        },
+        {
+            "customerName":"Devendra",
+            "dob":"25/06/2008",
+            "customerAddress":"Near IT Park",
+            "photo":"https://www.jagranimages.com/images/newimg/23042023/23_04_2023-sachin_world_cup_trophy_23393532.webp",
+            "customerId":"3",
+            "cityId":1,
+            "stateId":1,
+            "state": "Maharashtra",
+            "city": "Mumbai"
+        },
+        {
+            "customerName":"Mahendra",
+            "dob":"01/04/2003",
+            "customerAddress":"Near IT Park",
+            "photo":"https://img.mensxp.com/media/content/2022/Apr/Sachin-Tendulkar1200_626542f8a2beb.jpeg",
+            "customerId":"4",
+            "cityId":5,
+            "stateId":5,
+            "state": "Delhi",
+            "city": "Noida"
+        },
+        {
+            "customerName":"Virendra",
+            "dob":"28/11/2004",
+            "customerAddress":"Near IT Park",
+            "photo":"https://images.moneycontrol.com/static-mcnews/2020/09/Sachin-Tendulkar.jpg?impolicy=website&width=1600&height=900",
+            "customerId":"5",
+            "cityId":4,
+            "stateId":4,
+            "state": "Maharashtra",
+            "city": "Kolhapur"
+        }
+    ]
+}

@@ -1,0 +1,185 @@
+<div class="container-fluid">
+    <div class="row">
+        <div [ngClass]="isSidePanelOPen? 'col-8' : 'col-12' ">
+            <div class="card">
+                <div class="card-header bg-success">
+                    <div class="row">
+                        <div class="col-6 text-white">
+                            <b>Customer List Page</b>
+                        </div>
+                        <div class="col-6 text-end">
+                            <button class="btn btn-sm btn-primary" (click)="ShowSidePanel()">Add</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-12 text-end">
+                            <input type="text" placeholder="search" [(ngModel)]="search" (ngModelChange)="onFilter($event)" />
+                        </div>
+                    </div>
+                    <table class="table table-bordered">
+                        <thead class="table-dark">
+                            <tr >
+                                <th><b>Sr</b></th>
+                                <th><b>Customer Name</b></th>
+                                <th>D O B</th>
+                                <th>Customer Address</th>
+                                <th>Photo Upload</th>
+                                
+                                <th>State</th>
+                                <th>City</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let customer of filteredcustomerList; let sr=index">
+                                <td>{{sr+1}}</td>
+                                <td>{{customer.customerName}}</td>
+                                <td>{{customer.dob}}</td>
+                                <td>{{customer.customerAddress}}</td>
+                                <td>
+                                    <img style="height: 50px;width: 50px;" [src]="customer.photo"/>
+                                </td>
+                                
+                                <td>{{customer.state}}</td>
+                                <td>{{customer.city}}</td>
+                                <td class="text-center">
+                                    <button class="btn btn-sm btn-success" (click)="onEdit(customer)"> <i
+                                            class="fa-solid fa-pen-to-square" style="color: black;"></i></button>
+                                    <button class="btn btn-sm btn-danger ms-2" (click)="onDelet(customer)"><i
+                                            class="fa-sharp fa-solid fa-trash" style="color: black;"></i></button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-4" *ngIf="isSidePanelOPen">
+            <div class="card">
+                <div class="card-header bg-success">
+                    <div class="row">
+                        <div class="col-6 text-white">
+                            <b>Customer List Form</b>
+                        </div>
+                        <div class="col-6 text-end">
+                            <button class="btn btn-sm btn-danger" (click)="closeSidePanel()">Close <i
+                                    class="fa-regular fa-circle-xmark"></i></button>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <form #form="ngForm">
+                            <div class="col-12">
+                            
+                                <div class="row">
+                                    <div class="col-6">
+                                        <label for="Customer Name">Customer Name</label>
+                                        
+                                        <input type="text"  #name="ngModel"  [(ngModel)]="customerObject.customerName"  name="customerName" 
+                                        required minlength="4" maxlength="10" class="form-control">
+                                        <div class="text-danger" *ngIf="name.touched || name.dirty">
+                                            <span *ngIf="name.errors?.['required']">required</span>
+                                            <span *ngIf="name.errors?.['minlength']">minlength</span>
+                                            <span *ngIf="name.errors?.['maxlength']">maxlength</span>
+                                         </div> 
+    
+                                    </div>
+    
+                                    <div class="col-6">
+                                        <label for="D O B">D O B</label>
+                                        <input type="text" [(ngModel)]="customerObject.dob"  class="form-control" name="dob"
+                                        required minlength="4" maxlength="10">
+                                        <div class="text-danger" *ngIf="name.touched || name.dirty">
+                                            <span *ngIf="name.errors?.['required']">required</span>
+                                            <span *ngIf="name.errors?.['minlength']">minlength</span>
+                                            <span *ngIf="name.errors?.['maxlength']">maxlength</span>
+                                         </div> 
+                                    </div>
+                                </div>
+    
+                                <div class="row">
+                                    <div class="col-6">
+                                        <label for="Customer Address">Customer Address </label>
+                                        <input type="text" [(ngModel)]="customerObject.customerAddress"
+                                            class="form-control" name="customerAddress"  required minlength="4" maxlength="10">
+                                            <div class="text-danger" *ngIf="name.touched || name.dirty">
+                                                <span *ngIf="name.errors?.['required']">required</span>
+                                                <span *ngIf="name.errors?.['minlength']">minlength</span>
+                                                <span *ngIf="name.errors?.['maxlength']">maxlength</span>
+                                             </div> 
+                                    </div>
+                                    <div class="col-6">
+                                        <label for="Photo Upload">Photo Upload</label> <br>
+                                        <input type="file" src="" name="isRoomActive">
+    
+                                    </div>
+                                </div>
+    
+                                <div class="row">
+                                    <div class="col-6">
+                                        <label for="Customer Id">Customer Id</label>
+                                        <input type="text" [(ngModel)]="customerObject.customerId" 
+                                            class="form-control">
+                                    </div>
+                                </div>
+    
+    
+    
+    
+    
+                                <div class="row">
+                                    <div class="col-6">
+                                        <label>Sellect State</label>
+                                        <select [(ngModel)]="customerObject.stateId" class="form-select">
+                                            <option value="">Choose State</option>
+                                            <option *ngFor="let state of states" [value]="state.stateId">{{state.stateName}}
+                                            </option>
+                                        </select>
+                                    </div>
+    
+                                    <div class="col-6">
+                                        <label>Sellect City</label>
+                                        <select [(ngModel)]="customerObject.cityId" class="form-select">
+                                            <option value="">Choose City</option>
+                                            <option *ngFor="let city of cities" [value]="city.cityId">{{city.cityName}}
+                                            </option>
+                                        </select>
+                                    </div>
+    
+                                </div>
+    
+                                <div class="row">
+                                    <!-- <div class="col-6">
+                                            <button class="btn btn-outline-success mt-2" type="submit">Search</button>
+                                            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                                        </div> -->
+                                </div>
+    
+                                <div class="row mt-2">
+                                    <div class="col-6 text-end">
+    
+                                        <button class="btn btn-success p-2" (click)="onReset()">Reset</button>
+                                    </div>
+    
+    
+    
+                                    <div class="col-6">
+                                        
+                                        <button class="btn btn-success p-2" (click)="onCreatCustomer()" *ngIf="customerObject.customerId == 0" >Save
+                                            Customer</button>
+                                    </div>
+                                </div>
+                            </div>     
+                        </form>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

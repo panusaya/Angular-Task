@@ -1,0 +1,23 @@
+{"data": [
+    {
+        "cityId":1,
+        "cityName":"Mumbai"
+    },
+    {
+        "cityId":2,
+        "cityName":"Nagpur"
+    },
+    {
+        "cityId":3,
+        "cityName":"Pune"
+    },
+    {
+        "cityId":4,
+        "cityName":"Kolhapur"
+    }, 
+    {
+        "cityId":5,
+        "cityName":"Noida"
+    }
+]
+}
